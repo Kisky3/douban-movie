@@ -7,7 +7,7 @@ html, body {
 	height: 100%;
 	background-color: #191313;
 }
-h2, h3, h4 {
+h2, h3, h4，h5{
 	font-size: 50px;
 	line-height: 25px;
 	color: #D44431;
@@ -26,11 +26,16 @@ h3 {
 	text-align: left;
 	vertical-align: middle;
 }
-h4, h5 {
+h4,h5{
 	font-size: 13px;
 	color: rgba(65,65,65,1.00);
 	font-weight: 600;
 	letter-spacing: -1px;
+}
+
+h5{
+	float:left;
+	margin-top:5px;
 }
 .line {
 	border-left-style: solid;

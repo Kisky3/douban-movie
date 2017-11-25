@@ -5,22 +5,24 @@
 <head>
 <meta charset="utf-8">
 <title>DOUBAN MOVIE INDEX</title>
-<!--BEGIN JS&CSS-->
-<link href="css/bootstrap.min.css" rel="stylesheet"/>
-<link href="css/kwicks-slider.css" rel="stylesheet"/>
-<link href="css/style.css" rel="stylesheet">
-
-<script src="js/jquery-3.1.1.min.js"></script>
+<!-- JS&CSS-->
+<link type="text/css" href="css/bootstrap.min.css" rel="stylesheet"/>
+<link type="text/css" href="css/kwicks-slider.css" rel="stylesheet"/>
+<link type="text/css" href="css/style.css" rel="stylesheet">
 <script type="text/javascript" src="js/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+<!--Slide JS-->
 <script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
 <script type="text/javascript" src="js/jquery.kwicks-1.5.1.js"></script>
 
+<!--Star JS-->
+<script type="text/javascript" src="js/jquery.raty.min.js"></script>
+
 <!--END JS&CSS-->
 </head>
-
 <body>
-<!--BEGIN Navigation Bar-->
+<!--  Navigation Bar-->
 <div class="navtop">
   <nav class="navbar navbar-default " role="navigation">
     <ul class="nav navbar-nav">
@@ -34,9 +36,9 @@
     </ul>
   </nav>
 </div>
-<!--END Navigation Bar--> 
+<!--END Navigation Bar-->
 
-<!-- BEGIN Slider -->
+<!--  Slider -->
 <div class="container">
   <div class="row">
     <div class="span12">
@@ -52,9 +54,9 @@
       <span id="responsiveFlag"></span> </div>
   </div>
 </div>
-<!-- END Slider --> 
+<!-- END Slider -->
 
-<!-- BEGIN Words-->
+<!--  Words-->
 <div class="container">
   <div class="row">
     <div class="col-lg-4">
@@ -71,9 +73,9 @@
     </div>
   </div>
 </div>
-<!-- END Words--> 
+<!-- END Words-->
 
-<!--BEGIN Top250-->
+<!-- Top250-->
 <div class="white_block">
   <div class="grey_bar"></div>
   <div class="top_movie_title">
@@ -85,28 +87,60 @@
         <div class="movie_border" id="img0"></div>
         <h3 id="title0"></h3>
         <h4 id="genres0"></h4>
+        <div class="row">
+          <div class="col-lg-6">
+            <div id="star0"></div>
+          </div>
+          <div class="col-lg-4">
+            <h5 id="score0"></h5>
+          </div>
+        </div>
       </div>
       <div class="col-lg-3">
         <div class="movie_border" id="img1"></div>
         <h3 id="title1"></h3>
         <h4 id="genres1"></h4>
+        <div class="row">
+          <div class="col-lg-6">
+            <div id="star1"></div>
+          </div>
+          <div class="col-lg-4">
+            <h5 id="score1"></h5>
+          </div>
+        </div>
       </div>
       <div class="col-lg-3">
         <div class="movie_border" id="img2"></div>
         <h3 id="title2"></h3>
         <h4 id="genres2"></h4>
+        <div class="row">
+          <div class="col-lg-6">
+            <div id="star2"></div>
+          </div>
+          <div class="col-lg-4">
+            <h5 id="score2"></h5>
+          </div>
+        </div>
       </div>
       <div class="col-lg-3">
         <div class="movie_border" id="img3"></div>
         <h3 id="title3"></h3>
         <h4 id="genres3"></h4>
+        <div class="row">
+          <div class="col-lg-6">
+            <div id="star3"></div>
+          </div>
+          <div class="col-lg-4">
+            <h5 id="score3"></h5>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
 <!--END Top250-->
 <script>
-
+	
 //Get json date list size
 function JSONLength(obj) {
 var size = 0, key;
@@ -116,7 +150,8 @@ if (obj.hasOwnProperty(key))
 }
 return size;
 };
-	
+
+//Output information about Top250
 $(function Top250_Movie(){
    $.ajax({
        type : "get", 
@@ -126,7 +161,10 @@ $(function Top250_Movie(){
        jsonp: "callback",
        jsonpCallback:"success_jsonpCallback",
        success : function(json){
-         //For circulation to output top250 movie date
+		 
+		  var star_number_List = []; 
+		   
+         //  circulation to output top250 movie date
 		   for(var i = 0; i < 4; i++){
 			  var title = json.subjects[i].original_title;
 			  var img_url = json.subjects[i].images.small;
@@ -155,13 +193,28 @@ $(function Top250_Movie(){
 					casts_content = casts_content + content;
 				}
 			   document.getElementById("genres" + i).innerHTML = "[ Genres ] : " + genres_content + "<br>[ Casts ] : " + casts_content;
-			  
-				
-			     
+			   
+			   //get stars_number
+			   star_number=json.subjects[i].rating.average;
+			   star_number_List.push(star_number/2);
+			   
+			   //Out put star numbers
+			   $('#star' + i).raty({
+					readOnly	: true,
+					score		: star_number_List[i]
+				});
+			   
+			   //out put score
+			   document.getElementById("score" + i).innerHTML = "Score: " + star_number_List[i];
+			   
 			  
 			   
 		  }
-
+		  //END circulation to output top250 movie date
+         
+		       
+			   
+	
 		  
       }
     })
