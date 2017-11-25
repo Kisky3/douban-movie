@@ -1,0 +1,263 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!--* DOUBAN MOVIE: INDEX.html 1.0-->
+<!--* AUTOR:Xiang Yu-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>DOUBAN MOVIE INDEX</title>
+<!--BEGIN JS&CSS-->
+<script src="js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
+<script type="text/javascript" src="js/jquery.kwicks-1.5.1.js"></script>
+<link href="css/bootstrap.min.css" rel="stylesheet"/>
+<link rel="stylesheet" href="css/kwicks-slider.css" type="text/css">
+<style type="text/css">
+html, body {
+	width: 100%;
+	width: 100%;
+	height: 100%;
+	background-color: #191313;
+}
+h2, h3, h4 {
+	font-size: 50px;
+	line-height: 25px;
+	color: #D44431;
+	text-transform: none;
+	font-weight: 300;
+	letter-spacing: -1px;
+}
+h2 {
+	line-height: 65px;
+}
+h3 {
+	font-size: 20px;
+	line-height: 34px;
+	margin: 10px 0 10px;
+	font-weight: normal;
+	text-align: left;
+	vertical-align: middle;
+}
+h4, h5 {
+	font-size: 13px;
+	color: rgba(65,65,65,1.00);
+	font-weight: 600;
+	letter-spacing: -1px;
+}
+.line {
+	border-left-style: solid;
+	border-width: 0.5px;
+	border-left-color: rgba(70,68,68,1.00);
+	color: rgba(70,68,68,1.00);
+}
+.line p {
+	margin-left: 30px;
+}
+.btn_login {
+	color: #fff;
+	background: #F25C27;
+	padding: 5px 14px;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	text-shadow: none;
+	border: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+.btn_login :hover {
+	color: #fff;
+	background: #DB420E;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+	text-decoration: none;
+}
+.grey_bar {
+	height: 20px;
+	background-color: rgba(225,225,225,1.00);
+	border-top: 1px dashed #8c8b8b;
+}
+.top_movie_title {
+	text-align: center;
+	vertical-align: middle;
+	margin-bottom: 25px;
+}
+.white_block {
+	background-color: rgba(255,255,255,1.00);
+}
+.movie_border {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	text-align: left;
+	padding: 10px 10px 10px 10px;
+	width: 270px;
+	height: 370px;
+}
+.movie_border img {
+	width: 250px;
+	height: 350px;
+}
+.movie_border:hover img {
+	opacity: 0.8;
+}
+</style>
+<!--END JS&CSS-->
+</head>
+
+<body>
+<!--BEGIN Navigation Bar-->
+<div class="navtop">
+  <nav class="navbar navbar-default " role="navigation">
+    <ul class="nav navbar-nav">
+      <li> <img src="img/logo.png"> </li>
+      <li class="active"> <a href="RULE_INFO.html">
+        <p><i class="glyphicon glyphicon-home"></i>&nbsp;HOME</p>
+        </a> </li>
+      <li> <a href="#"> <i class="glyphicon glyphicon-star"></i>&nbsp;TOP 250 </a> </li>
+      <li> <a href="#"> <i class="glyphicon glyphicon-search"></i>&nbsp; SEARCH </a> </li>
+      <li> <a href="#"> <i class="glyphicon glyphicon-bookmark"></i>&nbsp;COMMENT</a></li>
+    </ul>
+  </nav>
+</div>
+<!--END Navigation Bar--> 
+
+<!-- BEGIN Slider -->
+<div class="container">
+  <div class="row">
+    <div class="span12">
+      <div class="flexslider">
+        <ul class="slides">
+          <li> <img src="img/slide-1.jpg" alt="" > </li>
+          <li> <img src="img/slide-2.jpg" alt="" > </li>
+          <li> <img src="img/slide-3.jpg" alt="" > </li>
+          <li> <img src="img/slide-4.jpg" alt="" > </li>
+          <li> <img src="img/slide-5.jpg" alt="" > </li>
+        </ul>
+      </div>
+      <span id="responsiveFlag"></span> </div>
+  </div>
+</div>
+<!-- END Slider --> 
+
+<!-- BEGIN Words-->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4">
+      <h2><b>{ About }</b><br>
+        DouBan Movie </h2>
+      <br>
+    </div>
+    <div class="col-lg-1"> </div>
+    <div class="col-lg-7">
+      <div class="line">
+        <p>DouBan Movie provides you with the most top movies which are in theaters now.You can also write comments of movies and get some information and order movie tickets. We can also recommend the top movie to you according to your records and taste.</p>
+        <p style="text-align:center; padding-top:20px;"><a class="btn_login">Login in</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END Words--> 
+
+<!--BEGIN Top250-->
+<div class="white_block">
+  <div class="grey_bar"></div>
+  <div class="top_movie_title">
+    <h2>{ Top Movie 250 }</h2>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3">
+        <div class="movie_border" id="img0"></div>
+        <h3 id="title0"></h3>
+        <h4 id="genres0"></h4>
+      </div>
+      <div class="col-lg-3">
+        <div class="movie_border" id="img1"></div>
+        <h3 id="title1"></h3>
+        <h4 id="genres1"></h4>
+      </div>
+      <div class="col-lg-3">
+        <div class="movie_border" id="img2"></div>
+        <h3 id="title2"></h3>
+        <h4 id="genres2"></h4>
+      </div>
+      <div class="col-lg-3">
+        <div class="movie_border" id="img3"></div>
+        <h3 id="title3"></h3>
+        <h4 id="genres3"></h4>
+      </div>
+    </div>
+  </div>
+</div>
+<!--END Top250-->
+<script>
+
+//Get json date list size
+function JSONLength(obj) {
+var size = 0, key;
+for (key in obj) {
+if (obj.hasOwnProperty(key)) 
+	size++;
+}
+return size;
+};
+	
+$(function Top250_Movie(){
+   $.ajax({
+       type : "get", 
+       async: false,
+       url : "https://api.douban.com/v2/movie/top250", 
+       dataType : "jsonp",
+       jsonp: "callback",
+       jsonpCallback:"success_jsonpCallback",
+       success : function(json){
+         //For circulation to output top250 movie date
+		   for(var i = 0; i < 4; i++){
+			  var title = json.subjects[i].original_title;
+			  var img_url = json.subjects[i].images.small;
+			 
+				  //output movie title
+				 document.getElementById("title"+ i).innerHTML = "<span class='glyphicon glyphicon-bookmark'></span>      " + title;  
+				 
+			     //output movie img
+				 var img = document.createElement("img");
+				 img.setAttribute("src",img_url);
+				 document.getElementById("img"+i).appendChild(img);
+				  
+				 //output movie genres
+				 var genres_number = JSONLength(json.subjects[0].genres);
+			     var genres_content= "";
+			     for( var j = 0; j< genres_number; j++){
+					 var content = json.subjects[i].genres[j]+"/";
+					 genres_content =  genres_content + content;
+				 }   
+			   
+			    //output casts
+			    var casts_number = JSONLength(json.subjects[0].casts);
+			    var casts_content = "";
+			    for(var j = 0; j < casts_number; j++){
+					var content = json.subjects[i].casts[j].name + "/";
+					casts_content = casts_content + content;
+				}
+			   document.getElementById("genres" + i).innerHTML = "[ Genres ] : " + genres_content + "<br>[ Casts ] : " + casts_content;
+			  
+				
+			     
+			  
+			   
+		  }
+
+		  
+      }
+    })
+});
+</script>
+</body>
+</html>
