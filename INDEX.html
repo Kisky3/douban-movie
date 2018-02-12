@@ -23,18 +23,13 @@
 </head>
 <body>
 <!--  Navigation Bar-->
-<div class="navtop">
-  <nav class="navbar navbar-default " role="navigation">
-    <ul class="nav navbar-nav">
-      <li> <img src="img/logo.png"> </li>
-      <li class="active"> <a href="RULE_INFO.html">
-        <p><i class="glyphicon glyphicon-home"></i>&nbsp;HOME</p>
-        </a> </li>
-      <li> <a href="#"> <i class="glyphicon glyphicon-star"></i>&nbsp;TOP 250 </a> </li>
-      <li> <a href="#"> <i class="glyphicon glyphicon-search"></i>&nbsp; SEARCH </a> </li>
-      <li> <a href="#"> <i class="glyphicon glyphicon-bookmark"></i>&nbsp;COMMENT</a></li>
-    </ul>
-  </nav>
+<div>
+    <nav class="nav">
+  <ul>
+    <li> <img src="img/logo.png"> </li>
+   
+  </ul>
+</nav>
 </div>
 <!--END Navigation Bar-->
 
@@ -83,7 +78,7 @@
   </div>
   <div class="container">
     <div class="row">
-      <div class="col-lg-3">
+      <div class="col-lg-3" style="float:left">
         <div class="movie_border" id="img0"></div>
         <h3 id="title0"></h3>
         <h4 id="genres0"></h4>
@@ -96,7 +91,7 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-3">
+      <div class="col-lg-3" style="float:left">
         <div class="movie_border" id="img1"></div>
         <h3 id="title1"></h3>
         <h4 id="genres1"></h4>
@@ -109,7 +104,7 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-3">
+      <div class="col-lg-3" style="float:left">
         <div class="movie_border" id="img2"></div>
         <h3 id="title2"></h3>
         <h4 id="genres2"></h4>
@@ -122,7 +117,7 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-3">
+      <div class="col-lg-3" style="float:left">
         <div class="movie_border" id="img3"></div>
         <h3 id="title3"></h3>
         <h4 id="genres3"></h4>
@@ -139,8 +134,9 @@
   </div>
 </div>
 <!--END Top250-->
-<script>
-	
+
+
+<script>	
 //Get json date list size
 function JSONLength(obj) {
 var size = 0, key;

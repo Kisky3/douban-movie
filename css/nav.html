@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+   
+    <style type="text/css">
+
+     /* nav */  
+    .nav {  
+        position: relative;  
+        margin: 20px 0;  
+    }  
+    .nav ul {  
+        margin: 0;  
+        padding: 0;  
+    }  
+    .nav li {  
+        margin: 0 5px 10px 0;  
+        padding: 0;  
+        list-style: none;  
+        display: inline-block;  
+    }  
+    .nav a {  
+        padding: 3px 12px;
+		background: #999;
+        text-decoration: none;  
+        color: #fff;  
+        line-height: 100%;  
+    }  
+    .nav a:hover {  
+        color: #000;  
+    }  
+    .nav .current a {  
+        background: #999;
+		width:42px;
+		height:52px;
+        color: #fff;  
+    }  
+	    
+		@media screen and (max-width: 600px) {  
+        .nav {  
+            position: relative;  
+            min-height: 20px;  
+        }     
+        .nav ul {  
+            width: 150px;
+            padding: 0px 0;  
+            position: absolute;   
+            border: solid 1px #aaa;  
+            background: pink;  
+            border-radius: 5px;
+			background: #999;
+		    
+	
+        color: #fff;
+        }  
+        .nav li {  
+            display: none; /* hide all <li> items */  
+            margin: 0;  
+        }  
+        .nav .current {  
+            display: block; /* show only current <li> item */ 
+			height:30px;
+        }  
+        .nav a {  
+            display: block;  
+            padding: 5px 5px 5px 32px;  
+            text-align: left;  
+        }  
+        .nav .current a {  
+            background: none;  
+            color: #666;  
+        }  
+      
+        /* on nav hover */  
+        .nav ul:hover {  
+            background-image: none;  
+        }  
+        .nav ul:hover li {  
+            display: block;  
+            margin: 0 0 5px;
+			background:blue;
+        }  
+        .nav ul:hover .current {  
+            background: yellow;  
+        }  
+      
+        /* right nav */  
+        .nav.right ul {  
+            left: auto;  
+            right: 0;  
+        }  
+      
+        /* center nav */  
+        .nav.center ul {  
+            left: 50%;  
+            margin-left: -90px;  
+        }  
+          
+    }  
+</style>
+</head>
+<body>
+　
+       <nav class="nav">  
+        <ul>  
+            <li class="current"><a href="#">Portfolio</a></li>  
+            <li><a href="#">Illustration</a></li>  
+            <li><a href="#">Web Design</a></li>  
+            <li><a href="#">Print Media</a></li>  
+            <li><a href="#">Graphic Design</a></li>  
+        </ul>  
+    </nav>  
+   
+</body>
+</html>
