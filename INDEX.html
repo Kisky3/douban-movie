@@ -24,12 +24,20 @@
 <body>
 <!--  Navigation Bar-->
 <div>
-    <nav class="nav">
-  <ul>
-    <li> <img src="img/logo.png"> </li>
-   
-  </ul>
-</nav>
+<div class="nav_title">
+<img style="float:left;position:relative" src="img/logo.png">
+       <nav class="nav">  
+        <ul> 
+            <li class="current"><a href="#">Home</a></li>  
+            <li><a href="#">Top25</a></li>  
+            <li><a href="#">Search</a></li>    
+            <li><a href="#">New Movie</a></li>  
+        </ul>  
+    </nav>   
+<nav class="nav">  
+       
+    </nav>   
+</div>
 </div>
 <!--END Navigation Bar-->
 
@@ -75,10 +83,10 @@
   <div class="grey_bar"></div>
   <div class="top_movie_title">
     <h2>{ Top Movie 250 }</h2>
+    <a class="more_movie" href="#"><span class="glyphicon glyphicon-zoom-in"></span>Read more >> </a>
   </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-3" style="float:left">
+  <div class="top_movie">
+      <div class="top_img">
         <div class="movie_border" id="img0"></div>
         <h3 id="title0"></h3>
         <h4 id="genres0"></h4>
@@ -91,7 +99,7 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-3" style="float:left">
+      <div class="top_img">
         <div class="movie_border" id="img1"></div>
         <h3 id="title1"></h3>
         <h4 id="genres1"></h4>
@@ -104,7 +112,7 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-3" style="float:left">
+      <div class="top_img">
         <div class="movie_border" id="img2"></div>
         <h3 id="title2"></h3>
         <h4 id="genres2"></h4>
@@ -117,7 +125,7 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-3" style="float:left">
+      <div class="top_img">
         <div class="movie_border" id="img3"></div>
         <h3 id="title3"></h3>
         <h4 id="genres3"></h4>
@@ -132,7 +140,6 @@
       </div>
     </div>
   </div>
-</div>
 <!--END Top250-->
 
 
@@ -157,7 +164,7 @@ $(function Top250_Movie(){
        jsonp: "callback",
        jsonpCallback:"success_jsonpCallback",
        success : function(json){
-		 
+		   
 		  var star_number_List = []; 
 		   
          //  circulation to output top250 movie date
@@ -202,19 +209,18 @@ $(function Top250_Movie(){
 			   
 			   //out put score
 			   document.getElementById("score" + i).innerHTML = "Score: " + star_number_List[i];
-			   
-			  
-			   
 		  }
 		  //END circulation to output top250 movie date
-         
-		       
-			   
-	
-		  
       }
     })
 });
+
+// Search movie methord
+(function Search_Movie(){
+   
+
+});
+
 </script>
 </body>
 </html>
