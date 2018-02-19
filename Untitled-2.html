@@ -156,7 +156,7 @@
      <button id="Search" class="btn btn-success" data-toggle="tooltip" data-placement="bottom" title="Search movies after typing keywords"> Search </button>
        <table border="1" class="table table-hover" id="Search_movies">
           <thead>
-            <tr></tr>
+            <tr> </tr>
           </thead>
         </table>
    </div>
@@ -178,7 +178,7 @@ return size;
 
 //Output information about Top250
 $(function Top250_Movie(){
-    $.ajax({
+   $.ajax({
        type : "get", 
        async: false,
        url : "https://api.douban.com/v2/movie/top250", 
@@ -238,33 +238,19 @@ $(function Top250_Movie(){
 
 // Search movie methord
    $('#Search').click(function Search_Movie(){  
-      $.ajax({
-       type : "get", 
-       async: false,
-       url : "https://api.douban.com/v2/movie/search",
-	　 data: { q: $('#director').val()},
-       dataType : "jsonp",
-       jsonp: "callback",
-       jsonpCallback:"success_jsonpCallback",
-       success : function(json){	   
-		 renderAqiList(json)；
-		 
-      }
-    })
-   });
-	
-function renderAqiList(json) {
-
-            /＊*var tableLine = "<tr><th>城市</th><th>空气质量</th><th>操作</th></tr>";
-
-            for (var i = 0; i < aqiData.length; i++) {
-                var GetData = aqiData[i];
-                tableLine = tableLine + "<tr><td>" + GetData[0] + "</td><td>" + GetData[1] + "</td><td><button onclick='delBtnHandle(" + i + ")' class='button_style'>删除</button></td></tr>";
-
-            }
-            document.getElementById("aqi-table").innerHTML = tableLine;
-			
-}
+     $.ajax({	
+		//url:'https://api.douban.com/v2/movie/search',
+		url:'https:api.douban.com/v2/movie/top250',
+		type:'get',		
+		//data: {q: $('#director').val()},
+		dataType:'jsonp', 
+		jsonp: "callback2",
+        jsonpCallback:"success_jsonpCallback",
+		timeout:1000, 	
+	}).done(function(json) {
+	   alert(json);
+  });
+});
 </script>
 </body>
 </html>

@@ -1,131 +1,227 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-   
-    <style type="text/css">
-		.title{
-			background-color:#DB420E;
-			padding-left:20px;
-			overflow: hidden;
+<meta charset="utf-8">
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.dataTables.min.js"></script>
+<script src="js_original/SHOW_TIME.js/"></script>
+<script src="js/sweetalert.min.js"></script>
+<link href="css/sweetalert.css" rel="stylesheet"/>
+<link href="css_original/TOP_PART.css" rel="stylesheet"/>
+<link href="css/bootstrap.min.css" rel="stylesheet"/>
+<link href="css_original/RULE_INFO.css" rel="stylesheet"/>
+<link href="css_original/CLIENT_INFO_CTL.css" rel="stylesheet"/>
 
-		}
-     /* nav */  
-    .nav {  
-        position:absolute;  
-        margin: 0px 0px 0px 450px;
-	    font-family: 'Open Sans', sans-serif;
-		font-weight:bold;
-		background-color:transparent;
-		padding:34px 0 34px 0;
-		float:right;
-		
+<style type="text/css">
+.title {
+	background-color: #DB420E;
+	padding-left: 20px;
+	overflow: hidden;
+}
+/* nav */  
+.nav {
+	position: absolute;
+	margin: 0px 0px 0px 450px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+	background-color: transparent;
+	padding: 34px 0 34px 0;
+	float: right;
+}
+.nav ul {
+	margin: 0;
+	padding: 0;
+}
+.nav li {
+	margin: 0 35px 0px 0;
+	padding: 0;
+	list-style: none;
+	display: inline-block;
+}
+.nav a {
+	background-color: #DB420E;
+	padding: 34px 20px 34px 20px;
+	text-decoration: none;
+	color: #fff;
+	line-height: 100%;
+	margin-left: 0px;
+}
+.nav a:hover {
+	background: #191313;
+}
+.nav .current a {
+	background: #191313;
+	color: #fff;
+}
+
+@media screen and (max-width: 1000px) {
+.nav {
+	position: absolute;
+	min-height: 20px;
+	margin-left: 450px;
+}
+.nav ul {
+	width: 120px;
+	padding: 0px 0;
+	position: absolute;
+	color: #fff;
+}
+.nav li {
+	display: none; /* hide all <li> items */
+	margin: 0;
+}
+.nav .current {
+	display: block; /* show only current <li> item */
+	height: 30px;
+	border: solid 1px #aaa;
+	border-radius: 5px;
+}
+.nav a {
+	display: block;
+	padding: 5px 5px 5px 32px;
+	text-align: left;
+	background-color: transparent;
+}
+.nav .current a {
+	background: none;
+	color: #ffffff;
+}
+/* on nav hover */  
+.nav ul:hover {
+	background-image: none;
+}
+.nav ul:hover li {
+	display: block;
+	margin: 0 0 5px;
+	background: #DB420E;
+	border: solid 1px #aaa;
+	border-radius: 5px;
+}
+.nav ul:hover .current {
+	background: #191313;
+	color: #ffffff;
+}
+/* right nav */  
+.nav.right ul {
+	left: auto;
+	right: 0;
+}
+/* center nav */  
+.nav.center ul {
+	left: 50%;
+	margin-left: -90px;
+}
+}
+.search_block button{
+	width:120px;
+	float:right;
+}
+input,textarea{  
+        padding:5px;
+	    margin:0px 15px 20px 5px;
+        color:#999;  
+        border-radius:3px;  
+        border:1px solid #ccc;  
     }  
-    .nav ul {  
-        margin: 0;  
-        padding: 0;  
-    }  
-    .nav li {  
-        margin: 0 35px 0px 0;  
-        padding: 0;  
-        list-style: none;  
-        display: inline-block;  
-    }  
-    .nav a {  
-		background-color:#DB420E;
-		padding:34px 20px 34px 20px;
-        text-decoration: none;  
-        color: #fff;  
-        line-height: 100%;
-		margin-left:0px;
-		
-    }  
-    .nav a:hover {  
-        background:#191313; 
-    }  
-    .nav .current a {  
-        background: #191313;
-        color: #fff;
-    }  
-	  
-		
-		
-		
-	@media screen and (max-width: 1100px) {  
-        .nav {  
-            position:absolute;  
-            min-height: 20px;
-			margin-left:450px;
-			float:left;
-        }     
-        .nav ul {  
-            width: 200px;
-            padding: 0px 0;  
-            position: absolute;   
-            border: solid 1px #aaa;    
-            border-radius: 5px;
-			background: #999;
-            color: #fff;
-        }  
-        .nav li {  
-            display: none; /* hide all <li> items */  
-            margin: 0;  
-        }  
-        .nav .current {  
-            display: block; /* show only current <li> item */ 
-			height:30px;
-        }  
-        .nav a {  
-            display: block;  
-            padding: 5px 5px 5px 32px;  
-            text-align: left;
-			background-color:transparent;
-        }  
-        .nav .current a {  
-            background: none;  
-            color: #ffffff;  
-        }  
-      
-        /* on nav hover */  
-        .nav ul:hover {  
-            background-image: none;  
-        }  
-        .nav ul:hover li {  
-            display: block;  
-            margin: 0 0 5px;
-			background:#DB420E
-        }  
-        .nav ul:hover .current {  
-            background: #191313;
-			color:#ffffff;
-        }  
-      
-        /* right nav */  
-        .nav.right ul {  
-            left: auto;  
-            right: 0;  
-        }  
-      
-        /* center nav */  
-        .nav.center ul {  
-            left: 50%;  
-            margin-left: -90px;  
-        }  
-          
+    
+	
+    input[type=text]:focus,textarea:focus{  
+        outline:none;  
+        border-color:#D44431;  
+        -webkit-box-shadow:0 0 8px #D44431;  
+        -moz-box-shadow:0 0 8px #D44431;  
+        -o-box-shadow:0 0 8px #D44431;  
+        box-shadow:0 0 8px #D44431;  
+        -webkit-transition:border linear .2s, -webkit-box-shadow linear .5s;  
+        -moz-transition:border linear .2s, -moz-box-shadow linear .5s;  
+        -o-transition: border linear .2s, -o-box-shadow linear .5s;  
+        transition:border linear .2s, box-shadow linear .5s;  
     }  
 </style>
 </head>
 <body>
-　<div class="title">
-      <img style="float:left;position:relative" src="file:///C:/Users/kisky/Documents/GitHub/DouBan-Movie/img/logo.png">
-       <nav class="nav">  
-        <ul> 
-            <li class="current"><a href="#">Home</a></li>  
-            <li><a href="#">Top25</a></li>  
-            <li><a href="#">Search</a></li>    
-            <li><a href="#">New Movie</a></li>  
-        </ul>  
-    </nav>  
-	</div> 
+　
+<div class="title"> <img style="float:left;position:relative" src="file:///C:/Users/kisky/Documents/GitHub/DouBan-Movie/img/logo.png">
+  <nav class="nav">
+    <ul>
+      <li class="current"><a href="#">Home</a></li>
+      <li><a href="#">Top25</a></li>
+      <li><a href="#">Search</a></li>
+      <li><a href="#">New Movie</a></li>
+    </ul>
+  </nav>
+</div>
+
+<span class="glyphicon glyphicon-search"></span>
+     <input type="text" id="director" class="search_box" placeholder="search by director.."/>
+     
+     <span class="glyphicon glyphicon-search"></span>
+     <input type="text" id="tag" class="search_box" placeholder="search by tag.."/>
+     
+     <button id="Search" class="btn btn-success" data-toggle="tooltip" data-placement="bottom" title="項目を入力して検索してください。"> 検索 </button>
+	<div id="Search_Result"></div>
+<!--create Search_movies-->　　　　　　　　　
+<table border="1" class="table table-hover Rule_Info th td" id="Search_movies">
+  <thead>
+    <tr> </tr>
+  </thead>
+</table>
+
+<script>
+<!--Explaination of search botton-->
+$(function(){
+	$('[data-toggle=tooltip]').tooltip();
+	});
+<!--END Explain tooltip-->
+<!--BEGIN Search botton event-->
+$('#Search').click(function (){
+    <!--Destory Search_movies Table before searching-->
+	if ($.fn.dataTable.isDataTable('#Search_movies'))
+    {
+        _table = $('#Search_movies').DataTable();
+        _table.destroy();
+    } 
+
+oTable=$('#Search_movies').dataTable({   
+	    bPaginate : false,
+        bSort: false,
+		paging:false,
+		bInfo: false,
+		oLanguage:{
+	    sSearch:"&nbsp;&nbsp<span class='glyphicon glyphicon-search searchbar'></span>&nbsp;&nbsp;",
+	    }, 
+		sAjaxSource : "https://api.douban.com/v2/movie/search", 
+        sAjaxDataProp : "subjects[0].genres.title",　　   
+		
+	  <!--Search with three parameters-->
+		fnServerParams: function ( aoData ) {
+           aoData.push( {"name": "q", "value": $("#director").val(),});
+		   aoData.push( { "name": "tag", "value": $("#tag").val(),});
+        },
+		fnServerData: function ( sSource, aoData, fnCallback){
+          $.getJSON( sSource, aoData, function (json) { 
+           $.ajax({
+           url:sSource,
+		   data: aoData,
+		   error:function(XMLHttpRequest, textStatus, errorThrown){
+			document.getElementById("Search_Result").innerHTML="XMLHttpRequest:該当するデータが存在しません。";
+		   },
+		   <!--No matching records found-->
+		   success: function(data,fnCallback){
+		   alert(data.count);
+		   fnCallback(data);
+		   },
+		   type:'GET',
+           dataType:'json',
+          <!--Error-->
+		  }).fail(function(jaXHR,textStatus,errorThrown){
+	          alert(":端末情報管理データ取得APIとの接続が失敗した。");    
+	         })
+			fnCallback(json);
+        });
+        },
+});	
+</script>
 </body>
 </html>
