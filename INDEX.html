@@ -150,11 +150,7 @@
      <input type="text" id="tag" class="search_box" placeholder="search by tag.."/>
      
      <button id="Search" class="btn btn-success" data-toggle="tooltip" data-placement="bottom" title="Search movies after typing keywords"> Search </button>
-       <table border="1" class="table table-hover" id="Search_movies">
-          <thead>
-            <tr></tr>
-          </thead>
-        </table>
+     <p>About<span id="count"> _ _ _ </span>results...</p>
    
    </div>
 
@@ -242,25 +238,20 @@ $(function Top250_Movie(){
        dataType : "jsonp",
        jsonp: "callback",
        jsonpCallback:"success_jsonpCallback",
-       success : function(json){	   
-		alert(json.count);
-		 
-      }
-    })
-   });
-	
-function renderAqiList() {
-
-            /*var tableLine = "<tr><th>城市</th><th>空气质量</th><th>操作</th></tr>";
-
-            for (var i = 0; i < aqiData.length; i++) {
-                var GetData = aqiData[i];
-                tableLine = tableLine + "<tr><td>" + GetData[0] + "</td><td>" + GetData[1] + "</td><td><button onclick='delBtnHandle(" + i + ")' class='button_style'>删除</button></td></tr>";
+       success : function(json){
+		count.style.color="#F25C27";
+		document.getElementById("count").innerHTML = " " + json.total + " ";
+		
+		/*var tableLine = "<tr><th>Poster</th><th>Title</th><th>Collectors number</th></tr>";
+            for (var i = 0; i < 5; i++) {
+                tableLine = tableLine + "<tr><td>" + subjects[i].images.small + "</td><td>" + GetData[1] + "</td><td><button onclick='delBtnHandle(" + i + ")' class='button_style'>删除</button></td></tr>";
 
             }
             document.getElementById("aqi-table").innerHTML = tableLine;*/
-			
-}
+      }
+    });
+   });
+	
 </script>
 </body>
 </html>
