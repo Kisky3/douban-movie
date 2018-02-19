@@ -75,9 +75,7 @@
   <div class="grey_bar"></div>
   <div class="top_title">
     <h2>{ Top Movie 250 }</h2>
-    <div class="container">
     <a class="more_movie" href="#"><span class="glyphicon glyphicon-zoom-in"></span>Read more >> </a>
-    </div>
   </div>
   <div class="top_movie">
       <div class="top_img">
@@ -138,11 +136,9 @@
 
 <!-- Search Movies-->
  <div class="grey_bar"></div>
-  <div class="search_block">
-    <div class="container">
+  <div class="black_block">
      <div class="top_title">
        <h2>{ Search Movies }</h2>
-       <div class="container"></div>
        <a class="more_movie" href="#"><span class="glyphicon glyphicon-zoom-in"></span>Read more >> </a>
      </div>
      <img src="img/search_img.jpg">
@@ -159,7 +155,7 @@
             <tr></tr>
           </thead>
         </table>
-   </div>
+   
    </div>
 
 <!--END Search Movies-->
@@ -247,22 +243,22 @@ $(function Top250_Movie(){
        jsonp: "callback",
        jsonpCallback:"success_jsonpCallback",
        success : function(json){	   
-		 renderAqiList(json)；
+		alert(json.count);
 		 
       }
     })
    });
 	
-function renderAqiList(json) {
+function renderAqiList() {
 
-            /＊*var tableLine = "<tr><th>城市</th><th>空气质量</th><th>操作</th></tr>";
+            /*var tableLine = "<tr><th>城市</th><th>空气质量</th><th>操作</th></tr>";
 
             for (var i = 0; i < aqiData.length; i++) {
                 var GetData = aqiData[i];
                 tableLine = tableLine + "<tr><td>" + GetData[0] + "</td><td>" + GetData[1] + "</td><td><button onclick='delBtnHandle(" + i + ")' class='button_style'>删除</button></td></tr>";
 
             }
-            document.getElementById("aqi-table").innerHTML = tableLine;
+            document.getElementById("aqi-table").innerHTML = tableLine;*/
 			
 }
 </script>

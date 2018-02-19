@@ -90,6 +90,7 @@ h5 {
 .more_movie {
 	float: right;
 	margin-top: -15px;
+	margin-right:30px;
 	color: #978A8A;
 	text-decoration: none;
 }
@@ -230,15 +231,12 @@ h5 {
 	margin-bottom: 20px;
 }
 /*Search Block*/
-.search_block {
+.black_block {
 	background: #191313;
-	overflow: hidden;
-	display: flex;
-	align-items: center;
 }
-.search_block img {
+.black_block img {
 	float: left;
-	margin-right: 30px;
+	margin:0px 30px 10px 30px;
 }
 .search_block button {
 	width: 120px;
