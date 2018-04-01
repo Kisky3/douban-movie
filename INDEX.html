@@ -61,7 +61,9 @@
     <div class="col-lg-7">
       <div class="line">
         <p>DouBan Movie provides you with the most top movies which are in theaters now.You can also write comments of movies and get some information and order movie tickets. We can also recommend the top movie to you according to your records and taste.</p>
-        <p style="text-align:center; padding-top:20px;margin-bottom: 30px;"><a class="btn_login">Login in</a></p>
+        <div class="button_block">
+          <button class="btn-btn">Login in</button>
+        </div>
       </div>
     </div>
   </div>
@@ -141,7 +143,7 @@
   <input type="text" id="director" class="search_box" placeholder="search by director.."/>
   <span class="glyphicon glyphicon-search"></span>
   <input type="text" id="tag" class="search_box" placeholder="search by tag.."/>
-  <button id="Search" class="btn btn-success" data-toggle="tooltip" data-placement="bottom" title="Search movies after typing keywords"> Search </button>
+  <button id="Search" class="btn-btn" data-toggle="tooltip" data-placement="bottom" title="Search movies after typing keywords"> Search </button>
   <p>About<span id="count"> _ _ _ </span>results...If you want to see more details please click the Read more link</p>
   
   <!-- The Modal -->
@@ -155,18 +157,20 @@
         <th>Title</th>
         <th>Collectors</th>
       </tr>
-      <tr>
-        <td id="td_result1"></td>
-        <td id="td_result2"></td>
-        <td id="td_result3"></td>
-      </tr>
+    </table>
+     <table id="result_content_table" class="result_table">
+      
     </table>
   </div>
 </div>
 
 <!--END Search Movies--> 
 
-<script>	
+<script>
+
+//searching result img list
+var img_src_list=[];
+	
 //Get json date list size
 function JSONLength(obj) {
 var size = 0, key;
@@ -176,6 +180,30 @@ if (obj.hasOwnProperty(key))
 }
 return size;
 };
+
+//Create modal
+function create_modal(list_nmb){
+	
+	   // Get the modal
+       var modal = document.getElementById('myModal');
+
+       // Get the image and insert it inside the modal - use its "alt" text as a caption
+       var modalImg = document.getElementById("img01");
+       var captionText = document.getElementById("caption");
+       
+       modal.style.display = "block";
+	  //get the cretain src from searching result img list
+       modalImg.src =img_src_list[list_nmb];
+	   
+
+      // Get the <span> element that closes the modal
+       var span = document.getElementsByClassName("close")[0];
+
+     // When the user clicks on <span> (x), close the modal
+       span.onclick = function() { 
+       modal.style.display = "none";
+       } 
+}
 
 //Output information about Top250
 $(function Top250_Movie(){
@@ -238,7 +266,8 @@ $(function Top250_Movie(){
 });
 
 // Search movie methord
-   $('#Search').click(function Search_Movie(){  
+$('#Search').click(function Search_Movie(){
+	
       $.ajax({
        type : "get", 
        async: false,
@@ -251,58 +280,28 @@ $(function Top250_Movie(){
        jsonpCallback:"success_jsonpCallback",
        success : function(json){
 	   count.style.color="#F25C27";
+	   count.style.fontSize="22px";
 	   document.getElementById("count").innerHTML = " " + json.total + " ";
-	   
-	   //get the img from api and create the img list
-
-		   
-		alert(json.subjects[0].title);
-		alert(json.subjects[0].collect_count);
-	
-		
-        //output movie img
-				 var img = document.createElement("img");
-		         img.setAttribute("src",json.subjects[0].images.small);
-		   　　　img.setAttribute("alt",json.subjects[0].title);
-				 document.getElementById("td_result"+1).appendChild(img);
-		   
-		         var title = json.subjects[0].title;
-		         var collect_count = json.subjects[0].collect_count;
-		   
-		         document.getElementById("td_result"+2).innerHTML=title;
-		         document.getElementById("td_result"+3).innerHTML=collect_count;
-		   
-		   // Get the modal
-var modal = document.getElementById('myModal');
-
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-
-var modalImg = document.getElementById("img01");
-var captionText = document.getElementById("caption");
-img.onclick = function(){
-    modal.style.display = "block";
-    modalImg.src = img.src;
-	alert(img.src);
-    captionText.innerHTML = this.alt + "<br><br>" + json.subjects[0].genres[0]+json.subjects[0].genres[1]+json.subjects[0].genres[2];
-	
-}
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() { 
-    modal.style.display = "none";
-}
-		   
-      }
+	       
+		 //output movies list
+		 var tableLine = " " 
+		 
+            for (var i = 0; i < 5; i++) {
+             
+				img_src_list.push(json.subjects[i].images.small);
+				
+				var title = json.subjects[i].title;
+		        var collect_count = json.subjects[i].collect_count;
+				alert(img_src_list[i]);
+                tableLine = tableLine + '<tr><td><img src="' + img_src_list[i] + '" onclick="create_modal('+ i +')"/></td><td>' + title + '</td><td>'+ collect_count +'</td></tr>';
+               
+            }
+            document.getElementById("result_content_table").innerHTML = tableLine; 	    
+	  } 
     });
-   });
+  });
 	
 
-
-
-	
 </script>
 </body>
 </html>
