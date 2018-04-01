@@ -318,16 +318,16 @@ input[type=text]:focus, textarea:focus {
 .modal-content {
     margin: auto;
     display: block;
-    width: 50%;
-    max-width: 300px;
+    width: 100%;
+    max-width: 400px;
 }
 
 /* Caption of Modal Image */
 #caption {
     margin: auto;
     display: block;
-    width: 70%;
-    max-width: 300px;
+    width: 100%;
+    max-width: 500px;
 	margin-top:80px;
 	margin-left:200px;
     text-align:center;
