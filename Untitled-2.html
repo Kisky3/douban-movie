@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!--* DOUBAN MOVIE: INDEX.html 1.0-->
+<!--* AUTOR:Xiang Yu-->
+<head>
+<meta charset="utf-8">
+<title>DOUBAN MOVIE INDEX</title>
+<!-- JS&CSS-->
+<link type="text/css" href="css/bootstrap.min.css" rel="stylesheet"/>
+<link type="text/css" href="css/kwicks-slider.css" rel="stylesheet"/>
+<link type="text/css" href="css/style.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+<!--Slide JS-->
+<script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
+<script type="text/javascript" src="js/jquery.kwicks-1.5.1.js"></script>
+
+<!--Star JS-->
+<script type="text/javascript" src="js/jquery.raty.min.js"></script>
+
+<!--END JS&CSS-->
+</head>
+<body>
+<!--  Navigation Bar-->
+<div>
+<div class="nav_title">
+<img src="img/logo.png">
+       <nav class="nav">  
+        <ul> 
+            <li class="current"><a href="#">Home</a></li>  
+            <li><a href="#">Top25</a></li>  
+            <li><a href="#">Search</a></li>    
+            <li><a href="#">New Movie</a></li>  
+        </ul>  
+    </nav>   
+</div>
+</div>
+<!--END Navigation Bar-->
+
+<!--  Slider -->
+<div class="container">
+      <div class="flexslider">
+        <ul class="slides">
+          <li> <img src="img/slide-1.jpg" alt="" > </li>
+          <li> <img src="img/slide-2.jpg" alt="" > </li>
+          <li> <img src="img/slide-3.jpg" alt="" > </li>
+          <li> <img src="img/slide-4.jpg" alt="" > </li>
+          <li> <img src="img/slide-5.jpg" alt="" > </li>
+        </ul>
+      </div>
+      <span id="responsiveFlag"></span>
+<!-- END Slider -->
+
+<!--  Words-->
+  <div class="row">
+    <div class="col-lg-4">
+      <h2><b>{ About }</b><br>
+        DouBan Movie </h2>
+      <br>
+    </div>
+    
+    <div class="col-lg-7">
+      <div class="line">
+        <p>DouBan Movie provides you with the most top movies which are in theaters now.You can also write comments of movies and get some information and order movie tickets. We can also recommend the top movie to you according to your records and taste.</p>
+        <p style="text-align:center; padding-top:20px;margin-bottom: 30px;"><a class="btn_login">Login in</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END Words-->
+
+<!-- Top250-->
+<div class="white_block">
+  <div class="grey_bar"></div>
+  <div class="top_title">
+    <h2>{ Top Movie 250 }</h2>
+    <div class="container">
+    <a class="more_movie" href="#"><span class="glyphicon glyphicon-zoom-in"></span>Read more >> </a>
+    </div>
+  </div>
+  <div class="top_movie">
+      <div class="top_img">
+        <div class="movie_border" id="img0"></div>
+        <h3 id="title0"></h3>
+        <h4 id="genres0"></h4>
+        <div class="row">
+          <div class="col-lg-6">
+            <div id="star0"></div>
+          </div>
+          <div class="col-lg-4">
+            <h5 id="score0"></h5>
+          </div>
+        </div>
+      </div>
+      <div class="top_img">
+        <div class="movie_border" id="img1"></div>
+        <h3 id="title1"></h3>
+        <h4 id="genres1"></h4>
+        <div class="row">
+          <div class="col-lg-6">
+            <div id="star1"></div>
+          </div>
+          <div class="col-lg-4">
+            <h5 id="score1"></h5>
+          </div>
+        </div>
+      </div>
+      <div class="top_img">
+        <div class="movie_border" id="img2"></div>
+        <h3 id="title2"></h3>
+        <h4 id="genres2"></h4>
+        <div class="row">
+          <div class="col-lg-6">
+            <div id="star2"></div>
+          </div>
+          <div class="col-lg-4">
+            <h5 id="score2"></h5>
+          </div>
+        </div>
+      </div>
+      <div class="top_img">
+        <div class="movie_border" id="img3"></div>
+        <h3 id="title3"></h3>
+        <h4 id="genres3"></h4>
+        <div class="row">
+          <div class="col-lg-6">
+            <div id="star3"></div>
+          </div>
+          <div class="col-lg-4">
+            <h5 id="score3"></h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--END Top250-->
+
+<!-- Search Movies-->
+ <div class="grey_bar"></div>
+  <div class="search_block">
+    <div class="container">
+     <div class="top_title">
+       <h2>{ Search Movies }</h2>
+       <div class="container"></div>
+       <a class="more_movie" href="#"><span class="glyphicon glyphicon-zoom-in"></span>Read more >> </a>
+     </div>
+     <img src="img/search_img.jpg">
+     
+	 <span class="glyphicon glyphicon-search"></span>
+     <input type="text" id="director" class="search_box" placeholder="search by director.."/>
+     
+     <span class="glyphicon glyphicon-search"></span>
+     <input type="text" id="tag" class="search_box" placeholder="search by tag.."/>
+     
+     <button id="Search" class="btn btn-success" data-toggle="tooltip" data-placement="bottom" title="Search movies after typing keywords"> Search </button>
+       <table border="1" class="table table-hover" id="Search_movies">
+          <thead>
+            <tr> </tr>
+          </thead>
+        </table>
+   </div>
+   
+   <div id="images"></div>
+   </div>
+
+<!--END Search Movies-->
+
+
+<script>	
+//Get json date list size
+function JSONLength(obj) {
+var size = 0, key;
+for (key in obj) {
+if (obj.hasOwnProperty(key)) 
+	size++;
+}
+return size;
+};
+
+//Output information about Top250
+$(function Top250_Movie(){
+   $.ajax({
+       type : "get", 
+       async: false,
+       url : "https://api.douban.com/v2/movie/top250", 
+       dataType : "jsonp",
+       jsonp: "callback",
+       jsonpCallback:"success_jsonpCallback",
+       success : function(json){	   
+		  var star_number_List = []; 
+		   
+         //  circulation to output top250 movie date
+		   for(var i = 0; i < 4; i++){
+			  var title = json.subjects[i].original_title;
+			  var img_url = json.subjects[i].images.small;
+			 
+				  //output movie title
+				 document.getElementById("title"+ i).innerHTML = "<span class='glyphicon glyphicon-bookmark'></span>      " + title;  
+				 
+			     //output movie img
+				 var img = document.createElement("img");
+				 img.setAttribute("src",img_url);
+				 document.getElementById("img"+i).appendChild(img);
+				  
+				 //output movie genres
+				 var genres_number = JSONLength(json.subjects[0].genres);
+			     var genres_content= "";
+			     for( var j = 0; j< genres_number; j++){
+					 var content = json.subjects[i].genres[j]+"/";
+					 genres_content =  genres_content + content;
+				 }   
+			   
+			    //output casts
+			    var casts_number = JSONLength(json.subjects[0].casts);
+			    var casts_content = "";
+			    for(var j = 0; j < casts_number; j++){
+					var content = json.subjects[i].casts[j].name + "/";
+					casts_content = casts_content + content;
+				}
+			   document.getElementById("genres" + i).innerHTML = "[ Genres ] : " + genres_content + "<br>[ Casts ] : " + casts_content;
+			   
+			   //get stars_number
+			   star_number=json.subjects[i].rating.average;
+			   star_number_List.push(star_number/2);
+			   
+			   //Out put star numbers
+			   $('#star' + i).raty({
+					readOnly	: true,
+					score		: star_number_List[i]
+				});
+			   
+			   //out put score
+			   document.getElementById("score" + i).innerHTML = "Score: " + star_number_List[i];
+		  }
+		  //END circulation to output top250 movie date
+      }
+    })
+});
+
+// Search movie methord
+   $('#Search').click(function Search_Movie(){  
+     $.ajax({	
+		//url:'https://api.douban.com/v2/movie/search',
+		url:'https:api.douban.com/v2/movie/top250',
+		type:'get',		
+		//data: {q: $('#director').val()},
+		dataType:'jsonp', 
+		jsonp: "callback2",
+        jsonpCallback:"success_jsonpCallback",
+		timeout:1000, 	
+	}).done(function(json) {
+	   alert(json);
+  });
+});
+	
+$.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?
+tags=cat&tagmode=any&format=json&jsoncallback=?", function(data){
+  $.each(data.items, function(i,item){
+    $("<img/>").attr("src", item.media.m).appendTo("#images");
+    if ( i == 3 ) return false;
+  });
+});
+	
+</script>
+</body>
+</html>
+
+
+
+  // Get the modal
+       var modal = document.getElementById('myModal');
+
+       // Get the image and insert it inside the modal - use its "alt" text as a caption
+       var modalImg = document.getElementById("img01");
+       var captionText = document.getElementById("caption");
+       img.onclick = function(){
+       modal.style.display = "block";
+       modalImg.src = this.alt;
+	   
+	   
+
+      // Get the <span> element that closes the modal
+       var span = document.getElementsByClassName("close")[0];
+
+     // When the user clicks on <span> (x), close the modal
+       span.onclick = function() { 
+       modal.style.display = "none";
+       }   
+       
+       
+       '"onclick="create_modal(' + img_src_list[i] + ')
+       
+       
+       // Get the modal
+       var modal = document.getElementById('myModal');
+
+       // Get the image and insert it inside the modal - use its "alt" text as a caption
+       var modalImg = document.getElementById("img01");
+       var captionText = document.getElementById("caption");
+       img.onclick = function(){
+       modal.style.display = "block";
+       modalImg.src = this.alt;
+	   
+	   
+
+      // Get the <span> element that closes the modal
+       var span = document.getElementsByClassName("close")[0];
+
+     // When the user clicks on <span> (x), close the modal
+       span.onclick = function() { 
+       modal.style.display = "none";
+       } 
+       
+       
+       
+  <div class="flexslider">
+    <ul class="slides">
+      <li> <img src="img/slide-1.jpg" alt="" > </li>
+      <li> <img src="img/slide-2.jpg" alt="" > </li>
+      <li> <img src="img/slide-3.jpg" alt="" > </li>
+      <li> <img src="img/slide-4.jpg" alt="" > </li>
+      <li> <img src="img/slide-5.jpg" alt="" > </li>
+    </ul>
+  </div>
+  <span id="responsiveFlag"></span> 
