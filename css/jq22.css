@@ -1,0 +1,44 @@
+
+
+#slider {
+	Z-INDEX: 1;  POSITION: relative;  WIDTH: 100%; BACKGROUND: #000; HEIGHT: 403px; OVERFLOW: hidden;border-radius: 5px;margin-bottom: 30px;margin-top: 10px;margin-right:auto;margin-left:auto;
+}
+#slider .slide {
+	Z-INDEX: 10; POSITION: absolute; WIDTH: 100%; BACKGROUND: #000; HEIGHT: 333px; OVERFLOW: hidden; TOP: 43px; CURSOR: default; LEFT: 22px;text-align:left;
+}
+#slider .title {
+	COLOR: #f80; FONT-SIZE: 1.2em; FONT-WEIGHT: bold; MARGIN-RIGHT: 1.5em; TEXT-DECORATION: none
+}
+#slider .text {
+	POSITION: absolute; TEXT-ALIGN: justify; WIDTH: 1200px; DISPLAY: none; FONT-FAMILY: verdana, arial, Helvetica, sans-serif; COLOR: #fff; FONT-SIZE: 0.9em; TOP: 100%; LEFT: 10px
+}
+#slider .diapo {
+	POSITION: absolute; FILTER: alpha(opacity=100); VISIBILITY: visible; opacity: 1
+}
+#apDiv1 {
+	Z-INDEX: 1; POSITION: absolute; BACKGROUND-COLOR: #000000; WIDTH: 820px; HEIGHT: 30px; OVERFLOW: hidden; TOP: 0px; LEFT: 0px
+}
+#apDiv2 {
+	Z-INDEX: 3; POSITION: absolute; WIDTH: 860px; HEIGHT: 35px; OVERFLOW: hidden; TOP: 216px; LEFT: -429px
+}
+.pagenext {
+	POSITION: relative; WIDTH: 820px; HEIGHT: 37px
+}
+A.pn:link {
+	Z-INDEX: 4; POSITION: absolute; WIDTH: 47px; FONT: 12px "ÀŒÃÅE; COLOR: #666; TOP: 15px; RIGHT: 33px; TEXT-DECORATION: none
+}
+A.pn:visited {
+	Z-INDEX: 4; POSITION: absolute; WIDTH: 47px; FONT: 12px "ÀŒÃÅE; COLOR: #666; TOP: 15px; RIGHT: 33px; TEXT-DECORATION: none
+}
+A.pn:hover {
+	COLOR: #fff
+}
+A.pn:active {
+	COLOR: #fff
+}
+
+
+A:link {COLOR: #fff; TEXT-DECORATION: none;}
+A:visited {COLOR: #fff; TEXT-DECORATION: none;}
+A:hover {COLOR: #fff; TEXT-DECORATION:none;}
+A:active {COLOR: #fff; TEXT-DECORATION: none;}
