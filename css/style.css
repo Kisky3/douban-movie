@@ -235,7 +235,7 @@ h5 {
 }
 .black_block img {
 	float: left;
-	margin:0px 50px 10px 30px;
+	margin:0px 100px 10px 30px;
 }
 .search_block button {
 	width: 120px;
@@ -265,13 +265,14 @@ input[type=text]:focus, textarea:focus {
 	width:700px;
 	height:400px;
 	text-align:left;
-	margin-left:350px;
+	margin-left:420px;
 }
 .result_table {
 	position:relative;
     border-bottom:0px !important;
 	font-size:28px;
-	width:700px;
+	width:750px;
+	margin-top:10px;
 	height:30px;
 	table-layout:fixed;
 }
