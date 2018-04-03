@@ -324,12 +324,17 @@ input[type=text]:focus, textarea:focus {
     display: block;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 100%;
     max-width: 400px;
 =======
     width: 80%;
     max-width: 300px;
 >>>>>>> parent of c927f96... commit
+=======
+    width: 50%;
+    max-width: 300px;
+>>>>>>> parent of 3bfb7be... commit
 =======
     width: 50%;
     max-width: 300px;
