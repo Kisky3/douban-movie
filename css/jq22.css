@@ -1,10 +1,8 @@
-
-
 #slider {
 	Z-INDEX: 1;  POSITION: relative;  WIDTH: 80%; BACKGROUND: #000; HEIGHT: 403px; OVERFLOW: hidden;border-radius: 5px;margin-bottom: 30px;margin-top: 10px;margin-right:auto;margin-left:auto;
 }
 #slider .slide {
-	Z-INDEX: 10; POSITION: absolute; WIDTH: 100%; BACKGROUND: #000; HEIGHT: 333px; OVERFLOW: hidden; TOP: 43px; CURSOR: default; LEFT: 22px;text-align:left;
+	Z-INDEX: 10; POSITION: absolute; WIDTH: 800px; BACKGROUND: #000; HEIGHT: 333px; OVERFLOW: hidden; TOP: 43px; CURSOR: default; LEFT: 22px;text-align:left;
 }
 #slider .title {
 	COLOR: #f80; FONT-SIZE: 1.2em; FONT-WEIGHT: bold; MARGIN-RIGHT: 1.5em; TEXT-DECORATION: none
