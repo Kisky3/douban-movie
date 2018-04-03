@@ -323,20 +323,25 @@ input[type=text]:focus, textarea:focus {
     margin: auto;
     display: block;
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 100%;
     max-width: 400px;
 =======
     width: 80%;
     max-width: 300px;
 >>>>>>> parent of c927f96... commit
+=======
+    width: 50%;
+    max-width: 300px;
+>>>>>>> parent of 3bfb7be... commit
 }
 
 /* Caption of Modal Image */
 #caption {
     margin: auto;
     display: block;
-    width: 100%;
-    max-width: 500px;
+    width: 70%;
+    max-width: 300px;
 	margin-top:80px;
 	margin-left:200px;
     text-align:center;
