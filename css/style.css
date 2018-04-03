@@ -322,8 +322,13 @@ input[type=text]:focus, textarea:focus {
 .modal-content {
     margin: auto;
     display: block;
+<<<<<<< HEAD
     width: 100%;
     max-width: 400px;
+=======
+    width: 80%;
+    max-width: 300px;
+>>>>>>> parent of c927f96... commit
 }
 
 /* Caption of Modal Image */
