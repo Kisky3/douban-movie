@@ -261,6 +261,7 @@ input[type=text]:focus, textarea:focus {
 	width:80%;
 	text-align:left;
     overflow: hidden;
+	margin-bottom: 30px;
 }
 .result_table {
     border-bottom:0px !important;
