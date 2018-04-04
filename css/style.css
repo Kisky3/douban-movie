@@ -3,7 +3,7 @@
 
 html, body {
 	width: 100%;
-	width: 100%;
+	min-width:700px
 	height: 100%;
 	background-color: #191313;
 }
@@ -258,22 +258,22 @@ input[type=text]:focus, textarea:focus {
 	transition: border linear .2s, box-shadow linear .5s;
 }
 .result_block{
-	position:absolute;
-	width:700px;
+	width:80%;
 	text-align:left;
-	margin-left:350px;
+    overflow: hidden;
 }
 .result_table {
-	position:relative;
     border-bottom:0px !important;
 	font-size:28px;
-	width:700px;
+	min-width:700px;
+	width:80%;
 	height:30px;
 	table-layout:fixed;
 }
 
 .result_table th {
 	table-layout:fixed;
+	width:230px;
 }
 .result_table td{
 	font-size:20px;
@@ -317,23 +317,14 @@ input[type=text]:focus, textarea:focus {
 .modal-content {
     margin: auto;
     display: block;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
     width: 100%;
     max-width: 400px;
-=======
     width: 80%;
     max-width: 300px;
->>>>>>> parent of c927f96... commit
-=======
     width: 50%;
     max-width: 300px;
->>>>>>> parent of 3bfb7be... commit
-=======
     width: 50%;
     max-width: 300px;
->>>>>>> parent of 3bfb7be... commit
 }
 
 /* Caption of Modal Image */

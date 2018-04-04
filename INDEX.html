@@ -158,17 +158,27 @@ slider.init();
   <div class="top_title">
     <h2>{ Search Movies }</h2>
     <a class="more_movie" href="#"><span class="glyphicon glyphicon-zoom-in"></span>Read more >> </a> </div>
-  <img src="img/search_img.jpg"> <span class="glyphicon glyphicon-search"></span>
-  <input type="text" id="director" class="search_box" placeholder="search by director.."/>
-  <span class="glyphicon glyphicon-search"></span>
-  <input type="text" id="tag" class="search_box" placeholder="search by tag.."/>
-  <button id="Search" class="btn-btn" data-toggle="tooltip" data-placement="bottom" title="Search movies after typing keywords"> Search </button>
-  <p>About<span id="count"> _ _ _ </span>results...If you want to see more details please click the Read more link</p>
-  
-  <!-- The Modal -->
-  <div id="myModal" class="modal"> <span class="close">×</span> <img class="modal-content" id="img01">
-    <div id="caption"></div>
+  <div class="container">
+  <div class="row">
+  <div class="col-lg-4">
+  <input type="text" id="director" style="width:300px" placeholder="search by director.."/>
   </div>
+  
+  <div class="col-lg-4">
+  <input type="text" id="tag" style="width:300px" placeholder="search by tag.."/>
+  </div>
+ 
+  <div class="col-lg-4">
+  <span class="glyphicon glyphicon-search"></span>
+  <button id="Search" class="btn-btn" style="margin-left:30px" data-toggle="tooltip" data-placement="bottom" title="Search movies after typing keywords"> Search </button>
+  </div>
+  </div>
+  <br>
+  <p>About<span id="count"> _ _ _ </span>results...If you want to see more details please click the Read more link</p>
+  <br>
+ 
+  <div class="row">
+ <div class="col-lg-12">
   <div class="result_block">
     <table class="result_table">
       <tr>
@@ -181,7 +191,12 @@ slider.init();
     </table>
   </div>
 </div>
-
+</div>
+	</div>
+  <!-- The Modal -->
+  <div id="myModal" class="modal"> <span class="close">×</span> <img class="modal-content" id="img01">
+    <div id="caption"></div>
+  </div>
 <!--END Search Movies--> 
 
 <script>
@@ -319,13 +334,6 @@ $('#Search').click(function Search_Movie(){
     });
   });
 	
-<<<<<<< HEAD
-
-=======
-//show slide
-slider.init();
-	
->>>>>>> parent of f4a2a27... commit
 </script>
 </body>
 </html>
