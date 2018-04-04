@@ -222,6 +222,8 @@ p{
 	overflow: hidden;
 	justify-content: center;
 	display: flex;
+	margin-left:10px;
+	margin-right:10px;
 }
 .top_img {
 	margin-right: 30px;
