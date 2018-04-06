@@ -7,17 +7,20 @@
 <title>DOUBAN MOVIE INDEX</title>
 
 <!-- JS&CSS-->
-<link type="text/css" href="css/bootstrap.min.css" rel="stylesheet"/>
 <script type="text/javascript" src="js/jquery.js"></script>
 <link type="text/css" href="css/spinner.css" rel="stylesheet">
 <script type="text/javascript" src="js/spinner.js"></script>
 
+<link type="text/css" href="css/bootstrap.min.css" rel="stylesheet"/>
 <link type="text/css" href="css/style.css" rel="stylesheet">
-<link type="text/css" href="css/jq22.css" rel="stylesheet"/>
-<script type="text/javascript" src="js/slider.js"></script>
 
+<script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
+<script type="text/javascript" src="js/jquery.kwicks-1.5.1.js"></script>
+<link type="text/css" href="css/kwicks-slider.css" rel="stylesheet">	
 
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<!--<link type="text/css" href="css/jq22.css" rel="stylesheet"/>
+//<script type="text/javascript" src="js/slider.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>-->
 
 <!--Star JS-->
 <script type="text/javascript" src="js/jquery.raty.min.js"></script>
@@ -44,23 +47,17 @@
 <!--  Slider -->
 <div class="container">
 
-<div id="slider">
-	<div class="slide"><a href="#" target="_blank"><img class="diapo" 
-	 src="img/slide-1.jpg"></a> 
-	<div class="text"></div></div>
-	<div class="slide"><a href="#" target="_blank"><img class="diapo" 
-	 src="img/slide-2.jpg"></a> 
-	<div class="text"></div></div>
-	<div class="slide"><a href="#" target="_blank"><img class="diapo" 
-	 src="img/slide-3.jpg"></a> 
-	<div class="text"></div></div>
-	<div class="slide"><a href="#" target="_blank"><img class="diapo" 
-	 src="img/slide-4.jpg"></a> 
-	<div class="text"></div></div>
-	<div class="slide"><a href="#" target="_blank"><img class="diapo" 
-	 src="img/slide-5.jpg"></a> 
-	<div class="text"></div></div>
-</div> 
+<!-- slider -->
+        <div class="flexslider">
+              <ul class="slides">
+            <li> <img src="img/slide-1.jpg" alt="" > </li>
+            <li> <img src="img/slide-2.jpg" alt="" > </li>
+            <li> <img src="img/slide-3.jpg" alt="" > </li>
+            <li> <img src="img/slide-4.jpg" alt="" > </li>
+            <li> <img src="img/slide-5.jpg" alt="" > </li>
+          </ul>
+            </div>
+        <span id="responsiveFlag"></span>
   <!-- END Slider --> 
   
   <!--  Words-->
@@ -180,6 +177,7 @@
       <tr>
         <th>Poster</th>
         <th>Title</th>
+		<th>Director</th>
         <th>Collectors</th>
       </tr>
     </table>
@@ -197,11 +195,7 @@
   </div>
 <!--END Search Movies--> 
 
-<script>
-
-//start slide script
-slider.init();
-		
+<script>		
 //searching result about img list
 var img_src_list=[];
 
@@ -360,9 +354,11 @@ $('#Search').click(function Search_Movie(){
 			    img_src_list.push(json.subjects[i].images.large);
 				var title = json.subjects[i].title;
 		        var collect_count = json.subjects[i].collect_count;
+			    var director = json.subjects[i].directors[0].name
 				
 			   //create result table
-                tableLine = tableLine + '<tr><td><img src="' + img_src_list[i] + '" onclick="create_modal('+ i +')"/></td><td>' + title + '</td><td>'+ collect_count +'</td></tr>';     
+                tableLine = tableLine + '<tr><td><img src="' + img_src_list[i] + '" onclick="create_modal('+ i +')"/></td><td>' + title 
+					                  + '</td><td>'+ director+ '</td><td>'+ collect_count +'</td></tr>';     
             }
             //out put table lines into html
 		    document.getElementById("result_content_table").innerHTML = tableLine;
