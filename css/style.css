@@ -308,6 +308,7 @@ input[type=text]:focus, textarea:focus {
 	font-size:19px;
     border-bottom: 1px dashed #8c8b8b;
 	border-top: 1px dashed #8c8b8b;
+	width:200px;
 }
 .result_block img {
 	width: 100px;
@@ -332,11 +333,11 @@ input[type=text]:focus, textarea:focus {
 	margin-right:auto;
 	margin-left:auto;
 	margin-top:5%;
-    padding:40px 10px 10px 60px; /* Location of the box */
+    padding:40px 10px 10px 10px; /* Location of the box */
     left: 0;
     top: 0;
-    width: 50%; /* Full width */
-    height: 80%; /* Full height */
+    width: 500px; /* Full width */
+	height: 600px;
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0,1); /* Fallback color */
     background-color: rgba(0,0,0,1); /* Black w/ opacity */
@@ -346,14 +347,9 @@ input[type=text]:focus, textarea:focus {
 .modal-content {
     margin: auto;
     display: block;
-    width: 100%;
+	margin-top:30px;
+    width: 400px;
     max-width: 400px;
-    width: 80%;
-    max-width: 300px;
-    width: 50%;
-    max-width: 300px;
-    width: 50%;
-    max-width: 300px;
 }
 
 /* Caption of Modal Image */
