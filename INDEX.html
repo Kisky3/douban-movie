@@ -8,25 +8,20 @@
 
 <!-- JS&CSS-->
 <link type="text/css" href="css/bootstrap.min.css" rel="stylesheet"/>
+<script type="text/javascript" src="js/jquery.js"></script>
+<link type="text/css" href="css/spinner.css" rel="stylesheet">
+<script type="text/javascript" src="js/spinner.js"></script>
+
 <link type="text/css" href="css/style.css" rel="stylesheet">
 <link type="text/css" href="css/jq22.css" rel="stylesheet"/>
 <script type="text/javascript" src="js/slider.js"></script>
 
-<script type="text/javascript" src="js/jquery.js"></script>
+
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
 <!--Star JS-->
 <script type="text/javascript" src="js/jquery.raty.min.js"></script>
-<script>
-//spinner of whole page
-$(function(){
- loadingView(true);
-})
 
-$(window).load(function() {
- loadingView(false);
-})
-</script>
 <!--END JS&CSS-->
 </head>
 <body>
@@ -378,12 +373,6 @@ $('#Search').click(function Search_Movie(){
     });
   });
 
-//spinner
-function loadingView(flag) {
-  $('#loading-view').remove();
-  if(!flag) return;
-  $('<div id="loading-view" />').appendTo('body');
-}
 </script>
 </body>
 </html>
