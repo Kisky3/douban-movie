@@ -5,6 +5,7 @@
 <head>
 <meta charset="utf-8">
 <title>DOUBAN MOVIE INDEX</title>
+
 <!-- JS&CSS-->
 <link type="text/css" href="css/bootstrap.min.css" rel="stylesheet"/>
 <link type="text/css" href="css/style.css" rel="stylesheet">
@@ -16,7 +17,16 @@
 
 <!--Star JS-->
 <script type="text/javascript" src="js/jquery.raty.min.js"></script>
+<script>
+//spinner of whole page
+$(function(){
+ loadingView(true);
+})
 
+$(window).load(function() {
+ loadingView(false);
+})
+</script>
 <!--END JS&CSS-->
 </head>
 <body>
@@ -193,14 +203,6 @@
 <!--END Search Movies--> 
 
 <script>
-//spinner of whole page
-$(function(){
- loadingView(true);
-})
-
-$(window).load(function() {
- loadingView(false);
-})
 
 //start slide script
 slider.init();
