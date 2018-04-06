@@ -7,17 +7,12 @@
 <title>DOUBAN MOVIE INDEX</title>
 <!-- JS&CSS-->
 <link type="text/css" href="css/bootstrap.min.css" rel="stylesheet"/>
-<link type="text/css" href="css/kwicks-slider.css" rel="stylesheet"/>
 <link type="text/css" href="css/style.css" rel="stylesheet">
-<LINK rel=stylesheet type=text/css href="css/jq22.css">
-<SCRIPT type=text/javascript src="js/slider.js"></SCRIPT>
+<link type="text/css" href="css/jq22.css" rel="stylesheet"/>
+<script type="text/javascript" src="js/slider.js"></script>
 
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
-
-<!--Slide JS-->
-<script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
-<script type="text/javascript" src="js/jquery.kwicks-1.5.1.js"></script>
 
 <!--Star JS-->
 <script type="text/javascript" src="js/jquery.raty.min.js"></script>
@@ -25,6 +20,7 @@
 <!--END JS&CSS-->
 </head>
 <body>
+
 <!--  Navigation Bar-->
 <div>
   <div class="nav_title"> <img src="img/logo.png">
@@ -44,7 +40,6 @@
 <div class="container">
 
 <div id="slider">
-	
 	<div class="slide"><a href="#" target="_blank"><img class="diapo" 
 	 src="img/slide-1.jpg"></a> 
 	<div class="text"></div></div>
@@ -60,14 +55,7 @@
 	<div class="slide"><a href="#" target="_blank"><img class="diapo" 
 	 src="img/slide-5.jpg"></a> 
 	<div class="text"></div></div>
-
-</div>
-
-<SCRIPT type=text/javascript>
-/* ==== start script ==== */
-slider.init();
-</SCRIPT>
- 
+</div> 
   <!-- END Slider --> 
   
   <!--  Words-->
@@ -79,7 +67,9 @@ slider.init();
     </div>
     <div class="col-lg-7">
       <div class="line">
-        <p>DouBan Movie provides you with the most top movies which are in theaters now.You can also write comments of movies and get some information and order movie tickets. We can also recommend the top movie to you according to your records and taste.</p>
+        <p>DouBan Movie provides you with the most top movies which are in theaters now.
+        You can also write comments of movies and get some information and order movie tickets. 
+        We can also recommend the top movie to you according to your records and taste.</p>
         <div class="button_block">
           <button class="btn-btn">Login in</button>
         </div>
@@ -95,7 +85,6 @@ slider.init();
   <div class="top_title">
     <h2>{ Top Movie 250 }</h2>
     <a class="more_movie" href="#"><p><span class="glyphicon glyphicon-zoom-in"></span>Read more >> </p></a> </div>
- 
    <div class="top_movie">
     <div class="top_img">
       <div class="movie_border" id="img0"></div>
@@ -150,7 +139,7 @@ slider.init();
       </div>
     </div>
   </div>
-
+</div>
 <!--END Top250--> 
 
 <!-- Search Movies-->
@@ -176,7 +165,7 @@ slider.init();
   </div>
   </div>
   <br>
-  <p>About<span id="count"> _ _ _ </span>results...If you want to see more details please click the Read more link</p>
+  <p>About<span id="count"> _ _ _ </span>results was found...Just 5 results are showed here.Click the Read more link to see more.</p>
   <br>
  
   <div class="row">
@@ -204,9 +193,23 @@ slider.init();
 <!--END Search Movies--> 
 
 <script>
+//spinner of whole page
+$(function(){
+ loadingView(true);
+})
 
-//searching result img list
+$(window).load(function() {
+ loadingView(false);
+})
+
+//start slide script
+slider.init();
+		
+//searching result about img list
 var img_src_list=[];
+
+//searching result about brief introduction
+var introduction_list = [];
 	
 //Get json date list size
 function JSONLength(obj) {
@@ -224,15 +227,17 @@ function create_modal(list_nmb){
 	   // Get the modal
        var modal = document.getElementById('myModal');
 
-       // Get the image and insert it inside the modal - use its "alt" text as a caption
+       // Get the image and insert it inside the modal - Use its "alt" text as a caption
        var modalImg = document.getElementById("img01");
        var captionText = document.getElementById("caption");
        
        modal.style.display = "block";
+	  
 	  //get the cretain src from searching result img list
        modalImg.src =img_src_list[list_nmb];
+	   alert(introduction_list[list_nmb]);
+	   captionText.innerHTML =introduction_list[list_nmb];  
 	   
-
       // Get the <span> element that closes the modal
        var span = document.getElementsByClassName("close")[0];
 
@@ -254,20 +259,20 @@ $(function Top250_Movie(){
        success : function(json){	   
 		  var star_number_List = []; 
 		   
-         //  circulation to output top250 movie date
+         //Circulation to output top250 movie date
 		   for(var i = 0; i < 4; i++){
 			  var title = json.subjects[i].original_title;
 			  var img_url = json.subjects[i].images.small;
 			 
-				  //output movie title
+				  //Output movie title
 				 document.getElementById("title"+ i).innerHTML = "<span class='glyphicon glyphicon-bookmark'></span>      " + title;  
 				 
-			     //output movie img
+			     //Output movie img
 				 var img = document.createElement("img");
 				 img.setAttribute("src",img_url);
 				 document.getElementById("img"+i).appendChild(img);
 				  
-				 //output movie genres
+				 //Output movie genres
 				 var genres_number = JSONLength(json.subjects[0].genres);
 			     var genres_content= "";
 			     for( var j = 0; j< genres_number; j++){
@@ -275,7 +280,7 @@ $(function Top250_Movie(){
 					 genres_content =  genres_content + content;
 				 }   
 			   
-			    //output casts
+			    //Output casts
 			    var casts_number = JSONLength(json.subjects[0].casts);
 			    var casts_content = "";
 			    for(var j = 0; j < casts_number; j++){
@@ -284,7 +289,7 @@ $(function Top250_Movie(){
 				}
 			   document.getElementById("genres" + i).innerHTML = "[ Genres ] : " + genres_content + "<br>[ Casts ] : " + casts_content;
 			   
-			   //get stars_number
+			   //Get stars_number
 			   star_number=json.subjects[i].rating.average;
 			   star_number_List.push(star_number/2);
 			   
@@ -294,50 +299,89 @@ $(function Top250_Movie(){
 					score		: star_number_List[i]
 				});
 			   
-			   //out put score
+			   //Out put score
 			   document.getElementById("score" + i).innerHTML = "Score: " + star_number_List[i];
-		  }
+		   }
 		  //END circulation to output top250 movie date
-      }
+        },
     })
 });
 
-// Search movie methord
+
+// Search movie methord 
 $('#Search').click(function Search_Movie(){
-	
       $.ajax({
        type : "get", 
        async: false,
        url : "https://api.douban.com/v2/movie/search",
-	　 data: { q: $('#director').val(),
+	　 //two searching keys
+	   data: { q: $('#director').val(),
 			   tag:$('#tag').val()		
 			},
        dataType : "jsonp",
        jsonp: "callback",
        jsonpCallback:"success_jsonpCallback",
-       success : function(json){
+       beforeSend: function(){
+         loadingView(true);
+       },
+	   success : function(json){
 	   count.style.color="#F25C27";
 	   count.style.fontSize="22px";
 	   document.getElementById("count").innerHTML = " " + json.total + " ";
 	       
-		 //output movies list
+		 //Var to table lines
 		 var tableLine = " " 
 		 
-            for (var i = 0; i < 5; i++) {
-             
-				img_src_list.push(json.subjects[i].images.large);
-				
+		 //initial img_src_list
+		 img_src_list = [];
+		 
+		 //initial introduction list
+		 introduction_list = [];
+		         
+		   //create five results line here 
+		   for (var i = 0; i < 5; i++) { 
+				//Output movie genres
+				 var genres_number = JSONLength(json.subjects[i].genres);
+			     var genres_content= "";
+			     for( var j = 0; j< genres_number; j++){
+					 var content = json.subjects[i].genres[j]+"/";
+					 genres_content =  genres_content + content;
+				 }   
+			   
+			    //Output casts
+			    var casts_number = JSONLength(json.subjects[i].casts);
+			    var casts_content = "";
+			    for(var j = 0; j < casts_number; j++){
+					var content = json.subjects[i].casts[j].name + "/";
+					casts_content = casts_content + content;
+				}
+			   
+			   //push contents into introduction_list
+			   introduction_list.push(genres_content + "<br>" + casts_content);
+			   
+			   //push urls got from api into img_src_list
+			    img_src_list.push(json.subjects[i].images.large);
 				var title = json.subjects[i].title;
 		        var collect_count = json.subjects[i].collect_count;
-				alert(img_src_list[i]);
-                tableLine = tableLine + '<tr><td><img src="' + img_src_list[i] + '" onclick="create_modal('+ i +')"/></td><td>' + title + '</td><td>'+ collect_count +'</td></tr>';
-               
+				
+			   //create result table
+                tableLine = tableLine + '<tr><td><img src="' + img_src_list[i] + '" onclick="create_modal('+ i +')"/></td><td>' + title + '</td><td>'+ collect_count +'</td></tr>';     
             }
-            document.getElementById("result_content_table").innerHTML = tableLine; 	    
-	  } 
+            //out put table lines into html
+		    document.getElementById("result_content_table").innerHTML = tableLine;
+	   },
+	   complete: function(){
+           loadingView(false);
+        },
     });
   });
-	
+
+//spinner
+function loadingView(flag) {
+  $('#loading-view').remove();
+  if(!flag) return;
+  $('<div id="loading-view" />').appendTo('body');
+}
 </script>
 </body>
 </html>
