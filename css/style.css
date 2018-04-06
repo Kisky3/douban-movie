@@ -337,7 +337,7 @@ input[type=text]:focus, textarea:focus {
     left: 0;
     top: 0;
     width: 500px; /* Full width */
-	height: 600px;
+	height: 700px;
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0,1); /* Fallback color */
     background-color: rgba(0,0,0,1); /* Black w/ opacity */
@@ -348,7 +348,7 @@ input[type=text]:focus, textarea:focus {
     margin: auto;
     display: block;
 	margin-top:30px;
-    width: 400px;
+    width: 350px;
     max-width: 400px;
 }
 
