@@ -3,7 +3,6 @@
 
 html, body {
 	width: 100%;
-	min-width:700px
 	height: 100%;
 	background-color: #191313;
 }
@@ -19,7 +18,7 @@ h2 {
 	line-height: 65px;
 }
 h3 {
-	font-size: 18px;
+	font-size: 17px;
 	line-height: 30px;
 	margin: 10px 0 10px;
 	font-weight: normal;
@@ -60,7 +59,6 @@ p{
 .top_title {
 	text-align: center;
 	vertical-align: middle;
-	margin-bottom: 25px;
 	overflow: hidden;
 }
 .more_movie {
@@ -243,6 +241,43 @@ p{
 }
 }
 
+
+
+	/*Article block*/
+.article_block {
+	background: #FFFFFF;
+	overflow: hidden;
+	padding: 0px 30px 30px 30px;
+	border-right: 2px solid darkgrey;
+	border-bottom: 2px solid darkgrey;
+	width: 100%;
+}
+
+/*Img block*/
+.img_block {
+	position: relative;
+	border: 1px solid darkgrey;
+	background: #FFFFFF;
+	height: 460px;
+	width: 260px;
+	padding: 20px 20px 20px 20px;
+	overflow: hidden;
+	margin: 0px 0px 0px 30px;
+	float: left;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	text-align: left;
+}
+.img_block_img img{	
+	width: 220px;
+	height: 300px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}	
+
+.img_block_img:hover img{	
+    opacity: 0.8;
+}
+
+
 .top_movie {
 	overflow: hidden;
 	justify-content: center;
@@ -332,7 +367,7 @@ input[type=text]:focus, textarea:focus {
     z-index: 1; /* Sit on top */
 	margin-right:auto;
 	margin-left:auto;
-	margin-top:5%;
+	margin-top:30px;
     padding:40px 10px 10px 10px; /* Location of the box */
     left: 0;
     top: 0;
