@@ -277,7 +277,50 @@ p{
     opacity: 0.8;
 }
 
+@media screen and (max-width: 450px) {
+	/*Img block*/
+.img_block {
+	position: relative;
+	border: 1px solid darkgrey;
+	background: #FFFFFF;
+	width: 100%;
+	height: 100%;
+	padding: 20px 20px 20px 20px;
+	overflow: hidden;
+	margin: 0px 0px 0px 30px;
+	float: left;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	text-align: left;
+}
+.img_block_img img{	
+	width: 100%;
+	height: 100%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}	
+}
 
+@media screen and (max-width: 1260px) {
+	/*Img block*/
+   	/*Img block*/
+.img_block {
+	position: relative;
+	border: 1px solid darkgrey;
+	background: #FFFFFF;
+	width: 35%;
+	height: 45%;
+	padding: 20px 20px 20px 20px;
+	overflow: hidden;
+	margin: 0px 0px 50px 100px;
+	float: left;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	text-align: left;
+}
+.img_block_img img{	
+	width: 100%;
+	height: 100%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+}
 .top_movie {
 	overflow: hidden;
 	justify-content: center;
@@ -435,10 +478,13 @@ input[type=text]:focus, textarea:focus {
 }
 
 /* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px){
+@media only screen and (max-width: 600px){
     .modal-content {
-        width: 50%;
+        width: 80%;
     }
+	
+	
+	
 }
 
 
