@@ -9,23 +9,26 @@
 <!-- JS&CSS-->
 <script type="text/javascript" src="js/jquery.js"></script>
 
-<!--spinner-->
+<!--SPINNER-->
 <link type="text/css" href="css/spinner.css" rel="stylesheet">
 <script type="text/javascript" src="js/spinner.js"></script>
 
+<!--Bootstrap-->
 <link type="text/css" href="css/bootstrap.min.css" rel="stylesheet"/>
+
+<!--ORIGINAL CSS-->
 <link type="text/css" href="css/style.css" rel="stylesheet">
 
+<!--SLIDER-->
 <script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
 <script type="text/javascript" src="js/jquery.kwicks-1.5.1.js"></script>
 <link type="text/css" href="css/kwicks-slider.css" rel="stylesheet">	
 
-<!--<link type="text/css" href="css/jq22.css" rel="stylesheet"/>
-//<script type="text/javascript" src="js/slider.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>-->
-
-<!--Star JS-->
+<!--STAR JS-->
 <script type="text/javascript" src="js/jquery.raty.min.js"></script>
+
+<!--ANIMATION JS-->
+<script type="text/javascript" src="js/jquery.unveilEffects.js"></script>
 
 <!--END JS&CSS-->
 </head>
@@ -48,8 +51,6 @@
 
 <!--  Slider -->
 <div class="container">
-
-<!-- slider -->
         <div class="flexslider">
               <ul class="slides">
             <li> <img src="img/slide-1.jpg" alt="" > </li>
@@ -86,13 +87,13 @@
 <!-- Top250-->
 <div class="white_block">
   <div class="grey_bar"></div>
-  <div class="top_title">
+  <div class="top_title wow fadeInUp">
     <h2>{ Top Movie 250 }</h2>
     <a class="more_movie" href="#"><p><span class="glyphicon glyphicon-zoom-in"></span>Read more >> </p></a> </div>
+  
   <!--Img Block-->
-   
-    <div class="article_block">
-      <div class="img_block">
+  <div class="img_area">
+      <div class="img_block right_space">
         <div id="img0" class="img_block_img"></div>
          <h3 id="title0"></h3>
       <h4 id="genres0"></h4>
@@ -105,8 +106,9 @@
         </div>
       </div>
       </div>
-      
-       <div class="img_block">
+	
+   
+       <div class="img_block right_space">
         <div id="img1" class="img_block_img"></div>
          <h3 id="title1"></h3>
       <h4 id="genres1"></h4>
@@ -119,8 +121,8 @@
         </div>
       </div>
       </div>
-      
-             <div class="img_block">
+
+     <div class="img_block right_space">
         <div id="img2" class="img_block_img"></div>
          <h3 id="title2"></h3>
       <h4 id="genres2"></h4>
@@ -133,7 +135,7 @@
         </div>
       </div>
       </div>
-      
+
         <div class="img_block">
         <div id="img3" class="img_block_img"></div>
          <h3 id="title3"></h3>
@@ -145,12 +147,10 @@
         <div class="col-lg-6">
           <h5 id="score3"></h5>
         </div>
-      </div>
-      </div>
-      
-     
+    </div>   
 </div>
 </div>
+	</div>
 <!--END Top250--> 
 
 <!-- Search Movies-->
@@ -184,10 +184,10 @@
   <div class="result_block">
     <table class="result_table">
       <tr>
-        <th>Poster</th>
-        <th>Title</th>
-		<th>Director</th>
-        <th>Collectors</th>
+        <th>【Poster】</th>
+        <th>【Title】</th>
+		<th>【Director】</th>
+        <th>【Collectors】</th>
       </tr>
     </table>
      <table id="result_content_table" class="result_table">
@@ -363,8 +363,11 @@ $('#Search').click(function Search_Movie(){
 			    img_src_list.push(json.subjects[i].images.large);
 				var title = json.subjects[i].title;
 		        var collect_count = json.subjects[i].collect_count;
-			    var director = json.subjects[i].directors[0].name
-				
+			   if(JSONLength(json.subjects[i].directors[0])!=[]){
+			    var director = json.subjects[i].directors[0].name;
+			   }else{
+				return("--");
+			   }
 			   //create result table
                 tableLine = tableLine + '<tr><td><img src="' + img_src_list[i] + '" onclick="create_modal('+ i +')"/></td><td>' + title 
 					                  + '</td><td>'+ director+ '</td><td>'+ collect_count +'</td></tr>';     
@@ -372,10 +375,11 @@ $('#Search').click(function Search_Movie(){
             //out put table lines into html
 		    document.getElementById("result_content_table").innerHTML = tableLine;
 	   },
+	   //Stop spinner
 	   complete: function(){
            loadingView(false);
         },
-    });
+     });
   });
 
 </script>

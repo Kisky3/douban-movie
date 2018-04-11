@@ -4,6 +4,7 @@
 html, body {
 	width: 100%;
 	height: 100%;
+	min-width: 982px;
 	background-color: #191313;
 }
 h2, h3, h4，h5 {
@@ -241,34 +242,25 @@ p{
 }
 }
 
-
-
-	/*Article block*/
-.article_block {
-	background: #FFFFFF;
+@media only screen and (min-width: 1213px){
+.img_area{
+    display:flex;
+    justify-content:center;
+    align-items: center;
 	overflow: hidden;
-	padding: 0px 30px 30px 30px;
-	border-right: 2px solid darkgrey;
-	border-bottom: 2px solid darkgrey;
-	width: 100%;
 }
-
 /*Img block*/
 .img_block {
-	position: relative;
-	border: 1px solid darkgrey;
 	background: #FFFFFF;
 	height: 460px;
-	width: 260px;
+	width: 290px;
 	padding: 20px 20px 20px 20px;
-	overflow: hidden;
-	margin: 0px 0px 0px 30px;
-	float: left;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	text-align: left;
+	text-align: left;	
 }
-.img_block_img img{	
-	width: 220px;
+.img_block_img img{
+    position: relative;
+	width: 250px;
 	height: 300px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }	
@@ -277,50 +269,46 @@ p{
     opacity: 0.8;
 }
 
-@media screen and (max-width: 450px) {
-	/*Img block*/
-.img_block {
+.right_space{
+	margin-right:40px;
+}
+}
+@media only screen and (min-width:500px) and (max-width: 1213px){
+	.img_area{
+	overflow: hidden;
+	background: pink;
+	padding-left: 5%;
+}
+	.img_block {
 	position: relative;
 	border: 1px solid darkgrey;
 	background: #FFFFFF;
-	width: 100%;
+	width: 40%;
 	height: 100%;
 	padding: 20px 20px 20px 20px;
 	overflow: hidden;
-	margin: 0px 0px 0px 30px;
+	margin: 30px 0px 0px 30px;
 	float: left;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	text-align: left;
+	bottom: 30px;
 }
-.img_block_img img{	
+.img_block_img img{
+    position: relative;
 	width: 100%;
 	height: 100%;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }	
+
+.img_block_img:hover img{	
+    opacity: 0.8;
 }
 
-@media screen and (max-width: 1260px) {
-	/*Img block*/
-   	/*Img block*/
-.img_block {
-	position: relative;
-	border: 1px solid darkgrey;
-	background: #FFFFFF;
-	width: 35%;
-	height: 45%;
-	padding: 20px 20px 20px 20px;
-	overflow: hidden;
-	margin: 0px 0px 50px 100px;
-	float: left;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	text-align: left;
-}
-.img_block_img img{	
-	width: 100%;
-	height: 100%;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+.right_space{
+	margin-right:5%;
 }
 }
+
 .top_movie {
 	overflow: hidden;
 	justify-content: center;
@@ -482,11 +470,49 @@ input[type=text]:focus, textarea:focus {
     .modal-content {
         width: 80%;
     }
-	
-	
-	
 }
 
+
+/*fadeInUp*/
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+.animated {
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: none;
+}
 
 
 
