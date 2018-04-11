@@ -276,14 +276,14 @@ p{
 @media only screen and (min-width:500px) and (max-width: 1213px){
 	.img_area{
 	overflow: hidden;
-	background: pink;
-	padding-left: 5%;
+	background: #ffffff;
+	padding-left: 2.5%;
 }
 	.img_block {
 	position: relative;
 	border: 1px solid darkgrey;
 	background: #FFFFFF;
-	width: 40%;
+	width: 45%;
 	height: 100%;
 	padding: 20px 20px 20px 20px;
 	overflow: hidden;
