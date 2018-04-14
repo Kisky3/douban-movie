@@ -154,6 +154,11 @@ p{
 	padding-top:20px;
 	margin-bottom: 30px;
 }
+
+input_block{
+	width:100%;
+}
+
 /* Response nav codind*/
 @media screen and (max-width: 1000px) {
 .nav_title {
@@ -274,6 +279,9 @@ p{
 	margin-right:40px;
 }
 }
+
+
+
 @media only screen and (min-width:500px) and (max-width: 1213px){
 	.img_area{
 	overflow: hidden;
@@ -307,6 +315,23 @@ p{
 .right_space{
 	margin-right:5%;
 }
+h2 {
+	font-size: 85px;
+	line-height:80px;
+}
+.more_movie{
+    font-size:20px;
+}
+p{  font-size:20px;}
+.btn-btn{
+   width:50%;
+   height:55px;
+   font-size:20px;
+}
+.input_block{
+ font-size:25px;
+}
+
 }
 
 .top_movie {
