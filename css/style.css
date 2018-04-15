@@ -45,9 +45,7 @@ p{
 	border-left-color: rgba(70,68,68,1.00);
 	color: rgba(70,68,68,1.00);
 }
-.navtop {
-	background-color: #DB420E;
-}
+
 .line p {
 	margin-left: 30px;
 }
@@ -101,40 +99,8 @@ p{
 	float: left;
 	position: relative;
 }
-.nav {
-	position: absolute;
-	margin: 0px 0px 0px 450px;
-	font-family: 'Open Sans', sans-serif;
-	font-weight: bold;
-	background-color: transparent;
-	padding: 34px 0 34px 0;
-	float: right;
-}
-.nav ul {
-	margin: 0;
-	padding: 0;
-}
-.nav li {
-	margin: 0 35px 0px 0;
-	padding: 0;
-	list-style: none;
-	display: inline-block;
-}
-.nav a {
-	background-color: transparent;
-	padding: 34px 20px 34px 20px;
-	text-decoration: none;
-	color: #fff;
-	line-height: 100%;
-	margin-left: 0px;
-}
-.nav a:hover {
-	background: #191313;
-}
-.nav .current a {
-	background: #191313;
-	color: #fff;
-}
+
+/*button style*/
 .btn-btn{
 	background-color:#DB420E;
 	color:#ffffff;
@@ -155,7 +121,7 @@ p{
 	margin-bottom: 30px;
 }
 
-input_block{
+.input_block{
 	width:100%;
 }
 
@@ -163,62 +129,6 @@ input_block{
 @media screen and (max-width: 1000px) {
 .nav_title {
 	margin-bottom: 60px;
-}
-.nav {
-	position: absolute;
-	min-height: 20px;
-	margin-left: 450px;
-}
-.nav ul {
-	width: 120px;
-	padding: 0px 0;
-	position: absolute;
-	color: #fff;
-}
-.nav li {
-	display: none; /* hide all <li> items */
-	margin: 0;
-}
-.nav .current {
-	display: block; /* show only current <li> item */
-	height: 30px;
-	border: solid 1px #aaa;
-	border-radius: 5px;
-}
-.nav a {
-	display: block;
-	padding: 5px 5px 5px 32px;
-	text-align: left;
-	background-color: transparent;
-}
-.nav .current a {
-	background: none;
-	color: #ffffff;
-}
-/* on nav hover */  
-.nav ul:hover {
-	background-image: none;
-}
-.nav ul:hover li {
-	display: block;
-	margin: 0 0 5px;
-	background: #DB420E;
-	border: solid 1px #aaa;
-	border-radius: 5px;
-}
-.nav ul:hover .current {
-	background: #191313;
-	color: #ffffff;
-}
-/* right nav */  
-.nav.right ul {
-	left: auto;
-	right: 0;
-}
-/* center nav */  
-.nav.center ul {
-	left: 50%;
-	margin-left: -90px;
 }
 
 /* The Modal (background) */
@@ -278,16 +188,27 @@ input_block{
 .right_space{
 	margin-right:40px;
 }
+
+/* nav */ 
+.nav_title {
+	background-color: #DB420E;
+	padding-left: 20px;
+	overflow: hidden;
+}
+.nav_title img {
+	float: left;
+	position: relative;
+}
 }
 
 
-
+/*response for phone screen*/
 @media only screen and (min-width:500px) and (max-width: 1213px){
-	.img_area{
+.img_area{
 	overflow: hidden;
 	padding-left: 5%;
 }
-	.img_block {
+.img_block {
 	position: relative;
 	border: 1px solid darkgrey;
 	background: #FFFFFF;
@@ -321,12 +242,18 @@ h2 {
 }
 .more_movie{
     font-size:20px;
+	margin:25px 0px 10px 0px;
 }
-p{  font-size:20px;}
+p{
+	font-size:20px; 
+ 	margin:20px 0px 20px 0px;
+}
+
 .btn-btn{
    width:50%;
    height:55px;
    font-size:20px;
+   margin-left: 5px;
 }
 .input_block{
  font-size:25px;

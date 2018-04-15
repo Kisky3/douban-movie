@@ -10,8 +10,9 @@
 <script type="text/javascript" src="js/jquery.js"></script>
 
 <!--SPINNER-->
-<link type="text/css" href="css/spinner.css" rel="stylesheet">
 <script type="text/javascript" src="js/spinner.js"></script>
+<link type="text/css" href="css/spinner.css" rel="stylesheet"/>
+
 
 <!--Bootstrap-->
 <link type="text/css" href="css/bootstrap.min.css" rel="stylesheet"/>
@@ -35,24 +36,13 @@
 <body>
 
 <!--  Navigation Bar-->
-<div>
-  <div class="nav_title"> <img src="img/logo.png">
-    <nav class="nav">
-      <ul>
-        <li class="current"><a href="#">Home</a></li>
-        <li><a href="#">Top25</a></li>
-        <li><a href="#">Search</a></li>
-        <li><a href="#">New Movie</a></li>
-      </ul>
-    </nav>
-  </div>
-</div>
+  <div class="nav_title"> <img src="img/logo.png"> </div>
 <!--END Navigation Bar--> 
 
 <!--  Slider -->
 <div class="container">
         <div class="flexslider">
-              <ul class="slides">
+          <ul class="slides">
             <li> <img src="img/slide-1.jpg" alt="" > </li>
             <li> <img src="img/slide-2.jpg" alt="" > </li>
             <li> <img src="img/slide-3.jpg" alt="" > </li>
@@ -136,7 +126,7 @@
       </div>
       </div>
 
-        <div class="img_block">
+      <div class="img_block">
         <div id="img3" class="img_block_img"></div>
          <h3 id="title3"></h3>
       <h4 id="genres3"></h4>
@@ -148,9 +138,9 @@
           <h5 id="score3"></h5>
         </div>
     </div>   
+   </div>
+  </div>
 </div>
-</div>
-	</div>
 <!--END Top250--> 
 
 <!-- Search Movies-->
@@ -169,10 +159,11 @@
   <div class="col-lg-4">
   <input type="text" id="tag" class="input_block" placeholder="search by tag.."/>
   </div>
- 
   <div class="col-lg-4">
-  <span class="glyphicon glyphicon-search"></span>
-  <button id="Search" class="btn-btn" style="margin-left:30px" data-toggle="tooltip" data-placement="bottom" title="Search movies after typing keywords"> Search </button>
+  <button id="Search" class="btn-btn" data-toggle="tooltip" data-placement="bottom" title="Search movies after typing keywords"> 
+     <span class="glyphicon glyphicon-search"></span>
+     Search 
+  </button>
   </div>
   </div>
   <br>
