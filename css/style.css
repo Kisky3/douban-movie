@@ -466,5 +466,9 @@ input[type=text]:focus, textarea:focus {
   animation-fill-mode: none;
 }
 
-
+/*------ footer ------- */
+footer {
+  background: #ffffff;
+  overflow: hidden;
+}
 
