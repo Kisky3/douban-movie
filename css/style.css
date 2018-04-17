@@ -45,6 +45,7 @@ h5 {
 }
 p{
 	color:#999;
+	font-size: 18px;
 }
 .line {
 	border-left-style: solid;
@@ -481,6 +482,14 @@ input[type=text]:focus, textarea:focus {
 	font-style:italic;
     margin-top:-20px;
 	padding-bottom: 50px;
+	width: 100%;
+}
+
+.row-2 p{
+	  color: grey;
+  padding: 3px 0 10px;
+  font-size: 20px;
+  text-align: left;
 }
 
 /*------ footer ------- */
@@ -545,3 +554,26 @@ footer ul,li{
   background-position: 0 bottom;
 }
 
+
+
+.wrapper {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 30px;
+}
+.img-indent {
+  margin: 0px 30px 0 0;
+  float: left;
+}
+.inner-1 {
+  padding-right: 30px;
+}
+ .overflow.extra {
+    overflow: hidden;
+  }
+.txt-1 {
+  color: grey;
+  padding: 3px 0 10px;
+  font-size: 20px;
+  text-align: left;
+}
